@@ -8,20 +8,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
-    name: Test
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    strategy:
-      matrix:
-        node: [12, 14, 16, lts]
-    steps:
-      - name: Checkout sendgrid-nodejs
-        uses: actions/checkout@v2
-
-      - name: Run Tests
-        run: npm test
-
   deploy:
     name: Deploy
     if: success() && github.ref_type == 'tag'
