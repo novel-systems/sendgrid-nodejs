@@ -1,7 +1,7 @@
 {
   "name": "@novel-systems/mail",
   "description": "Novel Systems NodeJS mail service",
-  "version": "8.1.5",
+  "version": "8.1.6",
   "author": "Novel Systems",
   "contributors": [
     "Kyle Partridge <kyle.partridge@sendgrid.com>",
