@@ -48,6 +48,7 @@ The following is the minimum needed code to send a simple email. Use this exampl
 
 For more complex use cases, please see [USE_CASES.md](https://github.com/sendgrid/sendgrid-nodejs/blob/main/docs/use-cases/README.md#email-use-cases).
 
+## CommonJS Usage
 ```js
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -80,6 +81,30 @@ sgMail
     }
   }
 })();
+```
+
+## ES Modules (ESM) Usage
+```js
+import sgMail from '@sendgrid/mail';
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+const msg = {
+  to: 'test@example.com',
+  from: 'test@example.com', // Use the email address or domain you verified above
+  subject: 'Sending with Twilio SendGrid is Fun',
+  text: 'and easy to do anywhere, even with Node.js',
+  html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+};
+
+// Using async/await
+try {
+  await sgMail.send(msg);
+} catch (error) {
+  console.error(error);
+
+  if (error.response) {
+    console.error(error.response.body)
+  }
+}
 ```
 
 After executing the above code, you should have an email in the inbox of the recipient. You can check the status of your email [in the UI](https://app.sendgrid.com/email_activity?). Alternatively, we can post events to a URL of your choice using our [Event Webhook](https://sendgrid.com/docs/API_Reference/Webhooks/event.html). This gives you data about the events that occur as Twilio SendGrid processes your email.

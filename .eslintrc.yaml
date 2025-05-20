@@ -3,6 +3,13 @@ env:
   node: true
   mocha: true
   jasmine: true
+parserOptions:
+  ecmaVersion: 2020
+  sourceType: module
+overrides:
+  - files: ["*.mjs"]
+    parserOptions:
+      sourceType: module
 rules:
   array-bracket-spacing:
   - 2

@@ -49,5 +49,6 @@
   "directories": {
     "test": "test"
   },
-  "author": "Twilio SendGrid"
+  "author": "Twilio SendGrid",
+  "packageManager": "pnpm@9.15.6+sha256.5bf88eca1e818b973b9359a16e57405177c7a9b8177b9125d587577311786e64"
 }
