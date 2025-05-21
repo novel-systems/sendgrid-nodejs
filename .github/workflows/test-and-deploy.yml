@@ -22,11 +22,6 @@ jobs:
         with:
           node-version: 16
 
-      - name: Create GitHub Release
-        uses: sendgrid/dx-automator/actions/release@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - run: npm install
       - name: Publish
         run: |
