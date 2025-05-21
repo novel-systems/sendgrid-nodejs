@@ -1,4 +1,4 @@
-name: Test and Deploy
+name: Deploy
 on:
   push:
     branches: [ '*' ]
@@ -11,7 +11,6 @@ jobs:
   deploy:
     name: Deploy
     if: success() && github.ref_type == 'tag'
-    needs: [ test ]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout sendgrid-nodejs
