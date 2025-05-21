@@ -10,7 +10,6 @@ on:
 jobs:
   deploy:
     name: Deploy
-    if: success() && github.ref_type == 'tag'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout sendgrid-nodejs
